@@ -1,0 +1,57 @@
+@url = http://localhost:30000/api/roles
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2JkMDg2LWYxMzEtNDM2Yi1iZjJkLWE4YTc0MDI2MTM0YiIsInBob25lIjoiMDkzMzM5NTA4ODkiLCJpYXQiOjE2NTcxNzg4MTcsImV4cCI6MTY1NzI2ODgxN30.zSah8YZpEXbeJlZlL04bAfA5ar5LODlShruy4VeITSA
+
+//get roles list
+GET {{url}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+//get permissions List
+GET {{url}}/permissions
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+
+//add new role
+POST {{url}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "roleT1",
+  "permissions": [
+    "SEE_ROLES", 
+    "ADD_ROLES", 
+    "EDIT_ROLES"
+  ]
+}
+
+###
+
+//get one role
+GET {{url}}/8b59dede-9506-47bb-9efc-3f699e495804
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+//get one role
+GET {{url}}/s/3121b419-2a69-46c0-93bd-f9a339849e79
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+//update role
+PUT {{url}}/a0fc8a45-992f-470d-8dab-f24a1bad449b
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "roleT2",
+  "status": 1
+}

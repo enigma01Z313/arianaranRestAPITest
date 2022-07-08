@@ -1,0 +1,50 @@
+@url = http://localhost:30000/api/users
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzY2JkMDg2LWYxMzEtNDM2Yi1iZjJkLWE4YTc0MDI2MTM0YiIsInBob25lIjoiMDkzMzM5NTA4ODkiLCJpYXQiOjE2NTcxNzg4MTcsImV4cCI6MTY1NzI2ODgxN30.zSah8YZpEXbeJlZlL04bAfA5ar5LODlShruy4VeITSA
+
+//get users list
+GET {{url}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+//add new user
+POST {{url}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName": "user",
+  "lastName": "new",
+  "nationalCode": "0017306143",
+  "employeeCode": "0000003",
+  "roleId": "ebfd3bd3-73d2-4ea2-8981-3ebc4060b693",
+  "phone": "09355459693",
+  "password": "1230",
+  "status": 0
+}
+
+###
+
+//get user
+GET {{url}}/98aca5cf-ee32-49ee-ab62-26c9fc56dd88
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+//update user
+PUT {{url}}/98aca5cf-ee32-49ee-ab62-26c9fc56dd88
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "phone": "09355459698",
+  "nationalCode": "0017306141",
+  "employeeCode": "0000001",
+  "firstName": "aaaaa",
+  "lastName": "aaaaa",
+  "imageId": "ebfd3bd3-73d2-4ea2-8981-3ebc4060b693",
+  "status": 0,
+  "roleId": "a0fc8a45-992f-470d-8dab-f24a1bad449b"
+}

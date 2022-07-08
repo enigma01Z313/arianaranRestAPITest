@@ -1,0 +1,19 @@
+@url = http://localhost:30000/api/auth
+
+//one time login
+POST {{url}}
+Content-Type: application/json
+
+{
+  "phone": "09333950889"
+}
+
+###
+
+//confirm login user
+POST {{url}}/63cbd086-f131-436b-bf2d-a8a74026134b
+Content-Type: application/json
+
+{
+  "confirmCode": "336924"
+}
